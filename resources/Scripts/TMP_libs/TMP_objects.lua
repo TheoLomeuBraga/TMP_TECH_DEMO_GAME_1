@@ -461,7 +461,7 @@ function render_text_component:new(object_ptr)
         j.material = deepcopyjson(self.material)
 
         set_text_json(self.object_ptr,json.encode(j))
-
+        
         --[[
         set_text(self.object_ptr,self.text)
         --layer
