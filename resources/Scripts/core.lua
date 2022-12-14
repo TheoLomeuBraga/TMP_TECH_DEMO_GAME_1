@@ -89,6 +89,10 @@ function load_level(map,background_image_path,music_path)
     --background
     medium = game_object:new(leyers.medium)
     medium:add_component(components.transform)
+    medium.components[components.transform].position = Vec3:new(10,5,0)
+    medium.components[components.transform].rotation = Vec3:new(0,0,0)
+    medium.components[components.transform].scale = Vec3:new(0.1,0.1,0.1)
+    medium.components[components.transform]:set()
     medium:add_component(components.render_tile_map)
     medium.components[components.render_tile_map].material.shader = "resources/Shaders/sprite"
     medium.components[components.render_tile_map].render_only_tilemap_layer = 0
@@ -103,18 +107,21 @@ function load_level(map,background_image_path,music_path)
     
     --background_image
     
+    
     background_image:add_component(components.transform)
     background_image.components[components.transform].scale = Vec3:new(10,10,10)
     background_image.components[components.transform]:set()
     background_image:add_component(components.render_shader)
     background_image.components[components.render_shader].material.shader = "resources/Shaders/fundo"
     background_image.components[components.render_shader].material.textures[0] = background_image_path
-    --background_image.components[components.render_shader].material.color.a = 0
     background_image.components[components.render_shader]:set()
+    
+    
+
 
     background_3D:add_component(components.transform)
     background_3D.components[components.transform].position = Vec3:new(10,5,0)
-    background_3D.components[components.transform].rotation = Vec3:new(0,0,0)
+    background_3D.components[components.transform].rotation = Vec3:new(0,90,0)
     background_3D.components[components.transform].scale = Vec3:new(2,2,2)
     background_3D.components[components.transform]:set()
     
@@ -122,14 +129,20 @@ function load_level(map,background_image_path,music_path)
     background_3D.components[components.render_mesh].layer = 1
     background_3D.components[components.render_mesh].meshes_cout = 1
     background_3D.components[components.render_mesh].meshes = {mesh_location:new("resources/3D Models/cube_sphere.obj","Cube")}
-    --background_3D.components[components.render_mesh].meshes[0] = {[0]="resources/3D Models/cube_sphere.obj",[1] = "Cube"}
     background_3D.components[components.render_mesh].materials = {matreial:new()}
     background_3D.components[components.render_mesh].materials[1].textures[1] = background_image_path
     background_3D.components[components.render_mesh].materials[1].color.g = 0
     background_3D.components[components.render_mesh].materials[1].color.b = 0
-    --background_3D.components[components.render_mesh].materials[0].shader = "resources/Shaders/mesh"
     background_3D.components[components.render_mesh].materials[1].shader = "resources/Shaders/test_geometry_shader"
     background_3D.components[components.render_mesh]:set()
+    
+    background_3D:add_component(components.render_tile_map)
+    background_3D.components[components.render_tile_map].material.shader = "resources/Shaders/sprite"
+    background_3D.components[components.render_tile_map].render_only_tilemap_layer = 0
+    background_3D.components[components.render_tile_map].tile_set_local = "resources/Leveis 2D/teste/tile_set_test.json"
+    background_3D.components[components.render_tile_map].tile_set_image_folder = "resources/Leveis 2D/teste"
+    background_3D.components[components.render_tile_map].tile_map_local = map
+    background_3D.components[components.render_tile_map]:set()
 
     scena_3D_teste = scene_3D:new()
     scena_3D_teste:get("resources/3D Models/cube_sphere.obj")
