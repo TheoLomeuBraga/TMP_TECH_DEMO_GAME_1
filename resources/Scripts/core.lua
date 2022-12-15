@@ -2,9 +2,14 @@ require("TMP_libs.TMP_core")
 require("TMP_libs.TMP_objects")
 require("TMP_libs.TMP_stystems")
 require("TMP_libs.TMP_input")
+
 require("math")
 json = require "libs.json"
 
+require("layers_table")
+require("load_2D_map")
+
+layer_list = layers_table:new()
 leyers = {}
 leyers.camera = nil
 leyers.background_image = nil
