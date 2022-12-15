@@ -10,6 +10,7 @@ require("layers_table")
 require("load_2D_map")
 
 layer_list = layers_table:new()
+
 leyers = {}
 leyers.camera = nil
 leyers.background_image = nil
