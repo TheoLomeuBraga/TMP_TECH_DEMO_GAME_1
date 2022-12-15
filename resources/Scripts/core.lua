@@ -204,7 +204,7 @@ function next_level()
 end
 
 
-function initialize_render()
+function initialize_render_layers()
     --[[
     window.res.x = 720
     window.res.y = 720
@@ -242,7 +242,7 @@ function START()
 	print("core iniciando")
     
 
-    initialize_render()
+    initialize_render_layers()
     
 
     
@@ -303,25 +303,7 @@ c = true
 rotation_value = 0
 function UPDATE()
     
-    Time:get()
-    temp = temp + Time.delta
     
-    
-    
-    hud.components[components.render_text].text = tostring(math.floor(1/Time.delta))
-    hud.components[components.render_text]:set()
-    
-    
-    
-    --background_3D.components[components.transform].rotation = Vec3:new(0,background_3D.components[components.transform].rotation.y + (Time.delta * 50),0)
-    --background_3D.components[components.transform]:set()
-    --background_3D:get()
-    
-    --background_3D2.components[components.transform].rotation = Vec3:new(0,background_3D2.components[components.transform].rotation.y + (Time.delta * 50),0)
-    --background_3D2.components[components.transform]:set()
-    rotation_value = rotation_value + Time.delta * 50
-    background_3D.components[components.transform]:change_rotation(0,rotation_value,0)
-    background_3D2.components[components.transform]:change_rotation(0,rotation_value,0)
     
 end
 
