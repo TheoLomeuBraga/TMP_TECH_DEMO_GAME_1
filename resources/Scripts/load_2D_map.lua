@@ -26,11 +26,11 @@ function load_2D_map(tile_map_path,tile_set_path,tile_set_images_folder,father_o
     ret.map_object = game_object:new(map_obj_ptr)
     ret.map_object:add_component(components.transform)
     ret.map_object:add_component(components.render_tile_map)
-    ret.components[components.render_tile_map].render_only_tilemap_layer = 0
+    ret.map_object.components[components.render_tile_map].render_only_tilemap_layer = 0
     ret.map_object.components[components.render_tile_map].tile_map_local = tile_map_path
     ret.map_object.components[components.render_tile_map].tile_set_local = tile_set_path
-    ret.components[components.render_tile_map].tile_set_image_folder = tile_set_images_folder
-    ret.components[components.render_tile_map].material.shader = "resources/Shaders/sprite"
+    ret.map_object.components[components.render_tile_map].tile_set_image_folder = tile_set_images_folder
+    ret.map_object.components[components.render_tile_map].material.shader = "resources/Shaders/sprite"
     ret.map_object.components[components.render_tile_map]:set()
 
     
