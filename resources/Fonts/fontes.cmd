@@ -1,1 +1,0 @@
-importador_fontes.exe arial.ttf arial.json 40 1

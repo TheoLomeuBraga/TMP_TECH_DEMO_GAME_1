@@ -6,7 +6,7 @@ require("math")
 require("io")
 json = require "libs.json"
 
-function load_2D_map(tile_map_path,tile_set_path,tile_set_images_folder,father_object)
+function load_2D_map(father_object,tile_map_path,tile_set_path,tile_set_images_folder)
     ret = {map_info={},map_object=""}
 
     --info
