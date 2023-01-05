@@ -432,6 +432,9 @@ function render_text_component:new(object_ptr)
     rs.font = ""
     rs.text = ""
     rs.line_size = 34
+    rs.space_betwen_chars = 0
+    rs.max_space_betwen_chars = 3
+    rs.min_space_betwen_chars = 0
     rs.material = matreial:new()
     function rs:get()
 
@@ -442,6 +445,9 @@ function render_text_component:new(object_ptr)
         self.font = j.font
         self.text = j.text
         self.line_size = j.line_size
+        self.space_betwen_chars = j.space_betwen_chars
+        self.max_space_betwen_chars = j.max_space_betwen_chars
+        self.min_space_betwen_chars = j.min_space_betwen_chars
         self.material = j.material
 
         --[[
@@ -461,6 +467,10 @@ function render_text_component:new(object_ptr)
         j.font = self.font
         j.text = self.text
         j.line_size = self.line_size
+        
+        j.space_betwen_chars = self.space_betwen_chars
+        j.max_space_betwen_chars = self.max_space_betwen_chars
+        j.min_space_betwen_chars = self.min_space_betwen_chars
         j.material = deepcopyjson(self.material)
 
         set_text_json(self.object_ptr,json.encode(j))
