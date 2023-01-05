@@ -431,6 +431,7 @@ function render_text_component:new(object_ptr)
     rs.layer = 1
     rs.font = ""
     rs.text = ""
+    rs.line_size = 34
     rs.material = matreial:new()
     function rs:get()
 
@@ -440,6 +441,7 @@ function render_text_component:new(object_ptr)
         self.layer = j.layer
         self.font = j.font
         self.text = j.text
+        self.line_size = j.line_size
         self.material = j.material
 
         --[[
@@ -458,6 +460,7 @@ function render_text_component:new(object_ptr)
         j.layer = self.layer
         j.font = self.font
         j.text = self.text
+        j.line_size = self.line_size
         j.material = deepcopyjson(self.material)
 
         set_text_json(self.object_ptr,json.encode(j))
