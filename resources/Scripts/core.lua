@@ -12,7 +12,7 @@ require("load_2D_map")
 
 --layer_list = layers_table:new()
 
-leyers = layers_table:new()--{}
+leyers = layers_table:new_2D()--{}
 
 
 hud = nil
@@ -48,7 +48,7 @@ end
 
 
 function initialize_layers()
-    leyers:create_2D_layer()
+    leyers:create()
 
     background_image = game_object:new(leyers.background_image)
     background_3D = game_object:new(create_object(leyers.background_3D))

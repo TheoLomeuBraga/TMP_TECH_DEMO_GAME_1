@@ -1,7 +1,7 @@
 require("TMP_libs.TMP_objects")
 require("TMP_libs.TMP_core")
 layers_table = {}
-function layers_table:new()
+function layers_table:new_2D()
     ret = {}
     ret.camera = ""
     ret.background_image = ""
@@ -11,7 +11,7 @@ function layers_table:new()
     ret.charter = ""
     ret.top = ""
     ret.hud = ""
-    function ret:create_2D_layer()
+    function ret:create()
         self.camera = create_object()
         self.background_image = create_object()
         self.background_3D = create_object()
